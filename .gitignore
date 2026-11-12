@@ -1,0 +1,20 @@
+# data is shared by the hiring team, not ours to publish
+data/*
+!data/README.md
+
+# trained models + generated predictions (regenerate with the CLI)
+artifacts/
+predictions/
+
+# python
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# misc
+.DS_Store
+._*
+.vscode/
+.idea/
