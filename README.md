@@ -9,7 +9,7 @@ prediction pipeline with a small CLI (`train` / `predict`).
 - [x] Model selection (`notebooks/02_modeling.ipynb`)
 - [x] Training / prediction pipeline (`src/regressor`)
 - [x] Tests (`tests/`)
-- [ ] Docker image
+- [x] Docker image (`Dockerfile`)
 
 ## Results
 
@@ -101,7 +101,26 @@ predictions/            prediction files (generated, not versioned)
 
 ## Docker
 
-Pending.
+The image contains Python 3.12, the four runtime libraries pinned to exact versions and the
+`regressor` package. Data, model and predictions stay on the host and are mounted as volumes,
+so the image doesn't need to be rebuilt when the model is retrained.
+
+```bash
+docker build -t regressor .
+
+docker run --rm -v "$(pwd)/data:/app/data" -v "$(pwd)/artifacts:/app/artifacts" \
+    regressor train --data data/training_data.csv
+
+docker run --rm -v "$(pwd)/data:/app/data" -v "$(pwd)/artifacts:/app/artifacts" \
+    -v "$(pwd)/predictions:/app/predictions" \
+    regressor predict --input data/blind_test_data.csv --output predictions/target_pred.csv
+```
+
+On Windows PowerShell replace `$(pwd)` with `${PWD}` and the trailing `\` with a backtick, or write
+each command on a single line.
+
+Train inside the container too (not only predict): the model file must be loaded with the same
+scikit-learn version that created it, and the image pins that version.
 
 ## Production notes
 
