@@ -2,6 +2,9 @@
 data/*
 !data/README.md
 
+# my own scratch / deep-dive notebooks, kept local
+notebooks/private/
+
 # trained models + generated predictions (regenerate with the CLI)
 artifacts/
 predictions/
