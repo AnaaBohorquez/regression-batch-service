@@ -1,0 +1,5 @@
+# what the pipeline needs to train + predict (also what goes in the docker image)
+numpy>=2.0,<3
+pandas>=2.2,<4
+scikit-learn>=1.5,<2
+joblib>=1.4
