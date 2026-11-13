@@ -1,0 +1,25 @@
+{
+  "model": "HistGradientBoostingRegressor",
+  "features": [
+    "feature_2",
+    "feature_13",
+    "feature_9",
+    "feature_11",
+    "feature_18"
+  ],
+  "target": "target",
+  "params": {
+    "max_iter": 501,
+    "learning_rate": 0.076,
+    "max_leaf_nodes": 6,
+    "min_samples_leaf": 18,
+    "l2_regularization": 0.495,
+    "random_state": 2026
+  },
+  "validation": {
+    "cv_rmse": 1.9162,
+    "holdout_rmse": 1.7935,
+    "holdout_mae": 1.4879,
+    "holdout_r2": 0.8726
+  }
+}
