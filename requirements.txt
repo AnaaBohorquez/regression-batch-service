@@ -1,5 +1,14 @@
-# what the pipeline needs to train + predict (also what goes in the docker image)
+# core (train + predict)
 numpy>=2.0,<3
 pandas>=2.2,<4
 scikit-learn>=1.5,<2
 joblib>=1.4
+
+# notebooks + tests
+scipy>=1.13
+matplotlib>=3.8
+jupyter
+pytest>=8
+
+# the pipeline itself (src/regressor), editable install
+-e .
