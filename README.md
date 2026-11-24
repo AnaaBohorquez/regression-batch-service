@@ -1,4 +1,4 @@
-# Wizeline ML challenge - batch regression
+# ML challenge - batch regression
 
 Regression model that predicts `target` from 20 numeric features, packaged as a batch
 prediction pipeline with a small CLI (`train` / `predict`).
